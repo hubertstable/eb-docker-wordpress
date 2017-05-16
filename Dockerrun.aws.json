@@ -6,8 +6,6 @@
       "image": "wordpress",
       "essential": true,
       "memory": 128,
-      "mountPoints": [
-      ]
       "portMappings": [
         {
           "hostPort": 80,
