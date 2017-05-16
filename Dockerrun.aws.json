@@ -1,0 +1,23 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "wordpress",
+      "image": "wordpress",
+      "essential": true,
+      "memory": 128,
+      "mountPoints": [
+      ]
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        },
+        {
+          "hostPort": 443,
+          "containerPort": 443
+        }
+      ]
+    }
+  ]
+}
