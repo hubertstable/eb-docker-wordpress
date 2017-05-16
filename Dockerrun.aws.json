@@ -8,7 +8,7 @@
 			}
 		},
 		{
-			"name": "wordpress",
+			"name": "wordpress-var-www-html",
 			"host": {
 				"sourcePath": "/var/app/current/volumes/wordpress"
 			}
@@ -37,6 +37,13 @@
 					"name": "MYSQL_ROOT_PASSWORD",
 					"value": "t00r"
 				}
+			],
+			"mountPoints": [
+			       {
+				  "sourceVolume": "maria-var-lib-mysql",
+				  "containerPath": "/var/lib/mysql",
+				  "readOnly": false
+				}
 			]
 		},
 		{
@@ -59,11 +66,12 @@
 			],
 			"mountPoints": [
 			       {
-				  "sourceVolume": "wordpress",
+				  "sourceVolume": "wordpress-var-www-html",
 				  "containerPath": "/var/www/html",
 				  "readOnly": false
 				}
 			]
+			
 		}
 	]
 }
