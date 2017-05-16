@@ -1,5 +1,19 @@
 {
 	"AWSEBDockerrunVersion": 2,
+	"volumes": [
+		{
+			"name": "maria-var-lib-mysql",
+			"host": {
+				"sourcePath": "/var/app/current/volumes/maria/var/lib/mysql"
+			}
+		},
+		{
+			"name": "wordpress",
+			"host": {
+				"sourcePath": "/var/app/current/volumes/wordpress"
+			}
+		}
+	  ],
 	"containerDefinitions": [
 		{
 			"name": "mariadb",
