@@ -9,10 +9,14 @@
 			"environment": [
 				{
 					"name": "MYSQL_USERNAME",
-					"value": "root"
+					"value": "wordpress"
 				},
 				{
 					"name": "MYSQL_PASSWORD",
+					"value": "wordpress"
+				},
+				{
+					"name": "MYSQL_ROOT_PASSWORD",
 					"value": "t00r"
 				},
 				{
