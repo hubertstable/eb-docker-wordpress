@@ -2,15 +2,15 @@
 	"AWSEBDockerrunVersion": 2,
 	"volumes": [
 		{
-			"name": "maria-var-lib-mysql",
+			"name": "mariadb-var-lib-mysql",
 			"host": {
-				"sourcePath": "/var/app/current/volumes/maria/var/lib/mysql"
+				"sourcePath": "/var/lib/docker/volumes/maria/var/lib/mysql"
 			}
 		},
 		{
 			"name": "wordpress-var-www-html",
 			"host": {
-				"sourcePath": "/var/app/current/volumes/wordpress"
+				"sourcePath": "/var/lib/docker/volumes/wordpress"
 			}
 		}
 	  ],
@@ -40,7 +40,7 @@
 			],
 			"mountPoints": [
 			       {
-				  "sourceVolume": "maria-var-lib-mysql",
+				  "sourceVolume": "mariadb-var-lib-mysql",
 				  "containerPath": "/var/lib/mysql",
 				  "readOnly": false
 				}
