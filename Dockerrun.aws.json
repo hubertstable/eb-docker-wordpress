@@ -1,21 +1,44 @@
 {
-  "AWSEBDockerrunVersion": 2,
-  "containerDefinitions": [
-    {
-      "name": "wordpress",
-      "image": "wordpress",
-      "essential": true,
-      "memory": 128,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 80
-        },
-        {
-          "hostPort": 443,
-          "containerPort": 443
-        }
-      ]
-    }
-  ]
+	"AWSEBDockerrunVersion": 2,
+	"containerDefinitions": [
+		{
+			"name": "mariadb",
+			"image": "mariadb",
+			"essential": true,
+			"memory": 256,
+			"environment": [
+				{
+					"name": "MYSQL_USERNAME",
+					"value": "root"
+				},
+				{
+					"name": "MYSQL_PASSWORD",
+					"value": "t00r"
+				},
+				{
+					"name": "MYSQL_DATABASE",
+					"value": "wordpress"
+				}
+			]
+		},
+		{
+			"name": "wordpress",
+			"image": "wordpress",
+			"essential": true,
+			"memory": 256,
+			"portMappings": [
+				{
+					"hostPort": 80,
+					"containerPort": 80
+				},
+				{
+					"hostPort": 443,
+					"containerPort": 443
+				}
+			],
+			"links": [
+				"mariadb"
+			]
+		}
+	]
 }
