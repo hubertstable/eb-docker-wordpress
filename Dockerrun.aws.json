@@ -8,7 +8,7 @@
 			"memory": 256,
 			"environment": [
 				{
-					"name": "MYSQL_USERNAME",
+					"name": "MYSQL_USER",
 					"value": "wordpress"
 				},
 				{
@@ -16,12 +16,12 @@
 					"value": "wordpress"
 				},
 				{
-					"name": "MYSQL_ROOT_PASSWORD",
-					"value": "t00r"
-				},
-				{
 					"name": "MYSQL_DATABASE",
 					"value": "wordpress"
+				},
+				{
+					"name": "MYSQL_ROOT_PASSWORD",
+					"value": "t00r"
 				}
 			]
 		},
