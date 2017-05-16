@@ -41,8 +41,7 @@
 			"mountPoints": [
 			       {
 				  "sourceVolume": "mariadb-var-lib-mysql",
-				  "containerPath": "/var/lib/mysql",
-				  "readOnly": false
+				  "containerPath": "/var/lib/mysql"
 				}
 			]
 		},
@@ -67,8 +66,7 @@
 			"mountPoints": [
 			       {
 				  "sourceVolume": "wordpress-var-www-html",
-				  "containerPath": "/var/www/html",
-				  "readOnly": false
+				  "containerPath": "/var/www/html"
 				}
 			]
 			
