@@ -56,6 +56,13 @@
 			],
 			"links": [
 				"mariadb"
+			],
+			"mountPoints": [
+			       {
+				  "sourceVolume": "wordpress",
+				  "containerPath": "/var/www/html",
+				  "readOnly": false
+				}
 			]
 		}
 	]
