@@ -63,6 +63,17 @@
 			}],
 			"links": [
 				"wordpress"
+			],
+			"mountPoints": [{
+					"sourceVolume": "nginx-confd",
+					"containerPath": "/etc/nginx/conf.d",
+					"readOnly": true
+				},
+				{
+					"sourceVolume": "nginx-html",
+					"containerPath": "/usr/share/nginx/html",
+					"readOnly": true
+				}
 			]
 		},
 		{
