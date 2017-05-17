@@ -1,7 +1,6 @@
 {
 	"AWSEBDockerrunVersion": 2,
-	"volumes": [
-		{
+	"volumes": [{
 			"name": "mariadb-var-lib-mysql",
 			"host": {
 				"sourcePath": "/var/lib/docker/volumes/maria/var/lib/mysql"
@@ -13,15 +12,13 @@
 				"sourcePath": "/var/lib/docker/volumes/wordpress"
 			}
 		}
-	  ],
-	"containerDefinitions": [
-		{
+	],
+	"containerDefinitions": [{
 			"name": "mariadb",
 			"image": "mariadb",
 			"essential": true,
 			"memory": 256,
-			"environment": [
-				{
+			"environment": [{
 					"name": "MYSQL_USER",
 					"value": "wordpress"
 				},
@@ -38,38 +35,37 @@
 					"value": "t00r"
 				}
 			],
-			"mountPoints": [
-			       {
-				  "sourceVolume": "mariadb-var-lib-mysql",
-				  "containerPath": "/var/lib/mysql"
-				}
+			"mountPoints": [{
+				"sourceVolume": "mariadb-var-lib-mysql",
+				"containerPath": "/var/lib/mysql"
+			}]
+		},
+		{
+			"name": "nginx",
+			"image": "nginx",
+			"essential": true,
+			"memory": 128,
+			"portMappings": [{
+				"hostPort": 80,
+				"containerPort": 80
+			}],
+			"links": [
+				"wordpress"
 			]
 		},
 		{
 			"name": "wordpress",
 			"image": "wordpress",
 			"essential": true,
-			"memory": 256,
-			"portMappings": [
-				{
-					"hostPort": 80,
-					"containerPort": 80
-				},
-				{
-					"hostPort": 443,
-					"containerPort": 443
-				}
-			],
+			"memory": 128,
 			"links": [
 				"mariadb"
 			],
-			"mountPoints": [
-			       {
-				  "sourceVolume": "wordpress-var-www-html",
-				  "containerPath": "/var/www/html"
-				}
-			]
-			
+			"mountPoints": [{
+				"sourceVolume": "wordpress-var-www-html",
+				"containerPath": "/var/www/html"
+			}]
+
 		}
 	]
 }
