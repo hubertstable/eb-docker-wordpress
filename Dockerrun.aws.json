@@ -7,6 +7,18 @@
 			}
 		},
 		{
+			"name": "nginx-html",
+			"host": {
+				"sourcePath": "/var/app/current/volumes/nginx/html"
+			}
+		},
+		{
+			"name": "nginx-confd",
+			"host": {
+				"sourcePath": "/var/app/current/volumes/nginx/conf.d"
+			}
+		},
+		{
 			"name": "wordpress-var-www-html",
 			"host": {
 				"sourcePath": "/var/lib/docker/volumes/wordpress"
